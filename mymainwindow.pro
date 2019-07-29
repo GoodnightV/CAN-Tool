@@ -1,0 +1,60 @@
+#-------------------------------------------------
+#
+# Project created by QtCreator 2018-11-15T15:13:09
+#
+#-------------------------------------------------
+
+QT       += core gui
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
+TARGET = mymainwindow
+TEMPLATE = app
+
+# The following define makes your compiler emit warnings if you use
+# any feature of Qt which has been marked as deprecated (the exact warnings
+# depend on your compiler). Please consult the documentation of the
+# deprecated API in order to know how to port your code away from it.
+DEFINES += QT_DEPRECATED_WARNINGS
+
+# You can also make your code fail to compile if you use deprecated APIs.
+# In order to do so, uncomment the following line.
+# You can also select to disable deprecated APIs only up to a certain version of Qt.
+#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+
+
+SOURCES += \
+        main.cpp \
+        mainwindow.cpp \
+    chartview.cpp \
+    recThread.cpp \
+    confFunc.cpp \
+    drawcurve.cpp
+
+HEADERS += \
+        mainwindow.h \
+    ControlCAN.h \
+    stdafx.h \
+    chartview.h \
+    recThread.h \
+    confFunc.h \
+    drawcurve.h
+
+FORMS += \
+        mainwindow.ui \
+    drawcurve.ui
+LIBS+= -LD:/WorkSpace/QT/mymainwindow/ -lControlCAN
+
+win32: LIBS += -L$$PWD/./ -lControlCAN
+
+INCLUDEPATH += $$PWD/.
+DEPENDPATH += $$PWD/.
+
+RESOURCES += \
+    myicon.qrc
+RC_ICONS = CAN.ico
+CONFIG += C++11
+
+
+QT       += charts
+QT += xml
